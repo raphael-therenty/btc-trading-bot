@@ -1,0 +1,90 @@
+paths:
+  data_raw: "data/raw"
+  data_processed: "data/processed"
+  outputs_models: "outputs/models"
+  outputs_backtests: "outputs/backtests"
+
+  crypto_csv: "data/raw/crypto_daily.csv"
+  macro_csv: "data/raw/macro_us.csv"
+  onchain_csv: "data/raw/onchain.csv"
+  features_csv: "data/processed/crypto_proceed.csv"
+
+  btc_xgb_prob: "outputs/models/BTC_xgb_prob.csv"
+  btc_dnn_prob: "outputs/models/BTC_dnn_prob.csv"
+  btc_garch_forecast: "outputs/models/BTC_garch_forecast.csv"
+  signals_csv: "outputs/models/signals.csv"
+  backtest_csv: "outputs/backtests/backtest_enhanced.csv"
+
+# ...existing config...
+paths:
+  data_raw: "data/raw"
+  data_processed: "data/processed"
+  crypto_csv: "data/raw/crypto_daily.csv"
+  macro_csv: "data/raw/macro_us.csv"
+  onchain_csv: "data/raw/onchain.csv"
+  outputs_models: "data/outputs/models"
+  btc_xgb_prob: "data/outputs/btc_xgb_prob.csv"
+  btc_dnn_prob: "data/outputs/btc_dnn_prob.csv"
+  btc_garch_forecast: "data/outputs/btc_garch_forecast.csv"
+  signals_csv: "data/outputs/signals.csv"
+  macro_csv: "data/raw/macro_us.csv"
+
+# Training configuration: optional explicit windows and test split
+training:
+  train_start: 2017-01-01     # e.g. "2015-01-01" or null to use start of processed data
+  train_end: null       # e.g. "2023-01-01" or null to use end of processed data
+  test_size: 0.2        # fraction of data reserved for validation (chronological)
+  # grid defaults used by tests (can be overridden in test script)
+  xgb:
+    max_depth: 3
+    n_estimators: 100
+  dnn:
+    epochs: 5
+    batch_size: 32
+
+strategy:
+  prob_threshold_long: 0.55
+  prob_threshold_short: 0.45
+  daily_volatility_target: 0.02
+  max_leverage: 3.0
+  turnover_limit: 0.2
+
+xgboost:
+  n_estimators: 200
+  max_depth: 4
+  learning_rate: 0.05
+  subsample: 0.8
+  colsample_bytree: 0.8
+  random_state: 42
+  use_label_encoder: false
+  eval_metric: "logloss"
+  base_score: 0.5
+
+dnn:
+  epochs: 10
+  batch_size: 32
+  dropout: 0.2
+  activation: "relu"
+  output_activation: "sigmoid"
+  optimizer: "adam"
+  loss: "binary_crossentropy"
+  validation_split: 0.1
+
+garch:
+  p: 1
+  q: 1
+  vol: "Garch"
+  dist: "normal"
+
+# Binance API / Crypto settings
+binance:
+  symbol: "BTCUSDT"
+  interval: "1d"
+  historical_start: "2015-01-01T00:00:00Z"
+  api_key: None
+  api_secret: None
+
+# Macroeconomic API keys
+api_keys:
+  fred: "fb57ead53dd3540b97a934826f2392fc"
+  bea: "E39EE815-B9FD-4482-85C3-2FB9E767C85F"

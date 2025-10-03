@@ -1,0 +1,21 @@
+{
+  "model": "dnn",
+  "params": {
+    "epochs": 5,
+    "batch_size": 32
+  },
+  "train_start": "2017-08-31",
+  "train_end": "2025-10-03",
+  "n_total": 2956,
+  "n_train": 2364,
+  "n_val": 592,
+  "val_accuracy": 0.5135135054588318,
+  "feature_cols": [
+    "BTC_close",
+    "BTC_volume",
+    "BTC_logp",
+    "BTC_sma10",
+    "BTC_sma50",
+    "BTC_rsi14"
+  ]
+}

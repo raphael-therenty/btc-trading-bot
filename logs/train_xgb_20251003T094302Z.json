@@ -1,0 +1,21 @@
+{
+  "model": "xgboost",
+  "params": {
+    "max_depth": 3,
+    "n_estimators": 100
+  },
+  "train_start": "2017-01-01",
+  "train_end": "2025-10-03",
+  "n_total": 2956,
+  "n_train": 2364,
+  "n_val": 592,
+  "val_auc": 0.5314045245354986,
+  "feature_cols": [
+    "BTC_close",
+    "BTC_volume",
+    "BTC_logp",
+    "BTC_sma10",
+    "BTC_sma50",
+    "BTC_rsi14"
+  ]
+}
