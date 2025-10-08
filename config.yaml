@@ -15,7 +15,6 @@ paths:
   signals_csv: "outputs/models/signals.csv"
   backtest_csv: "outputs/backtests/backtest_enhanced.csv"
 
-# ...existing config...
 paths:
   data_raw: "data/raw"
   data_processed: "data/processed"
@@ -29,10 +28,15 @@ paths:
   signals_csv: "data/outputs/signals.csv"
   macro_csv: "data/raw/macro_us.csv"
 
+portfolio:
+  symbol: "BTC-USD"
+  quantity: 0.0    # current holding in BTC (float)
+  cash: 10000.0    # current cash available (float)
+
 # Training configuration: optional explicit windows and test split
 training:
   train_start: 2017-01-01     # e.g. "2015-01-01" or null to use start of processed data
-  train_end: null       # e.g. "2023-01-01" or null to use end of processed data
+  train_end: 2020-01-01       # e.g. "2023-01-01" or null to use end of processed data
   test_size: 0.2        # fraction of data reserved for validation (chronological)
   # grid defaults used by tests (can be overridden in test script)
   xgb:

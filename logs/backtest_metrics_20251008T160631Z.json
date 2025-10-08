@@ -1,0 +1,21 @@
+{
+  "n_trades": 31,
+  "n_realized": 31,
+  "wins": 22,
+  "losses": 9,
+  "win_rate": 0.7096774193548387,
+  "cum_pnl": 2448.4900000000052,
+  "cum_return": 0.2448490000000005,
+  "avg_pnl": 78.98354838709695,
+  "avg_pct_return": 0.012086480742221883,
+  "strategy_annual_return_from_daily_mean": 0.04206788384762605,
+  "strategy_annual_return_equity": 0.41133638808693584,
+  "strategy_annual_vol": 0.2307117802477023,
+  "strategy_sharpe": 0.17860851670162622,
+  "max_drawdown": -0.493469196038447,
+  "avg_holding_days": 4.741935483870968,
+  "threshold": 0.5,
+  "n_signal_days": 165,
+  "data_start": "2020-01-02",
+  "data_end": "2025-10-08"
+}

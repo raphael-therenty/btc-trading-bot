@@ -5,11 +5,11 @@
     "batch_size": 32
   },
   "train_start": "2017-01-01",
-  "train_end": "2025-10-03",
-  "n_total": 2956,
-  "n_train": 2364,
-  "n_val": 592,
-  "val_accuracy": 0.49662160873413086,
+  "train_end": "2020-01-01",
+  "n_total": 854,
+  "n_train": 683,
+  "n_val": 171,
+  "val_accuracy": 0.3976608216762543,
   "feature_cols": [
     "BTC_close",
     "BTC_volume",

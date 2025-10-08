@@ -5,11 +5,11 @@
     "n_estimators": 100
   },
   "train_start": "2017-01-01",
-  "train_end": "2025-10-03",
-  "n_total": 2956,
-  "n_train": 2364,
-  "n_val": 592,
-  "val_auc": 0.5314045245354986,
+  "train_end": "2020-01-01",
+  "n_total": 854,
+  "n_train": 683,
+  "n_val": 171,
+  "val_auc": 0.47575926441905825,
   "feature_cols": [
     "BTC_close",
     "BTC_volume",
